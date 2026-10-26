@@ -1,0 +1,32 @@
+# Secrets - NEVER commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+id_rsa*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+
+# Data and logs
+*.csv
+*.log
+error.log
+*.parquet
+*.db
+*.sqlite
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Misc
+*.png
+*.zip
