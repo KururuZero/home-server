@@ -1,5 +1,4 @@
 # Name: gettingData.py
-import sys
 import time
 import websocket
 import json
@@ -30,11 +29,10 @@ if not DB_PASS:
         "DB_PASS not set - check ~/.config/secrets/.env for a DB_PASSWORD= line"
     )
 
-# ================= Notifier: use the monitor bot's /notify endpoint =====
-# Add the bot project to sys.path so we can import notify_safe()
-sys.path.insert(0, "/mnt/projects/Discord_Monitor_Bot")
-from notify import notify_safe
-
+# ================= Notifier: local copy =================
+# notifier.py sends messages to a Discord bot's /notify endpoint (optional).
+# If the bot is not running, notify_safe() logs the error and continues.
+from notifier import notify_safe
 
 # ================= Database =================
 def get_db_connection():
